@@ -26,6 +26,7 @@ set cmdheight=2
 set colorcolumn=80
 set mouse=a
 set noshowmode
+set hidden
 
 " =============================================================================
 " Plugins
