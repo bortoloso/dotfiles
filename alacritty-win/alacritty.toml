@@ -1,0 +1,123 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# General configurations
+[general]
+working_directory = "C:\\Users\\310118860"
+
+[keyboard]
+bindings = [
+{ key = "F1",chars = "#Ref: https://alacritty.org/releases/0.15.0/config-alacritty.html\n#config: %APPDATA%/alacritty/alacritty.toml\n########### HELP ###########\n" },
+{ key = "F2", action = "ReceiveChar"},
+{ key = "Enter", mods = "Control|Shift", action = "CreateNewWindow" },
+{ key = "F12",  action = "ToggleFullscreen" },
+]
+
+# Window dimensions (changes require restart)
+[window]
+# dimensions = { columns = 80, lines = 24 }
+# padding = { x = 0, y = 0 }
+# dynamic_padding = false
+# decorations = "None"
+startup_mode = "Maximized" # "Maximized" | "Fullscreen" | "Windowed" | "SimpleFullscreen"
+# position = { x = 0, y = 0 }
+
+# Font configuration
+[font]
+size = 15.0
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
+# use_thin_strokes = false
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+# Colors (Gruvbox dark)
+[colors]
+  # Default colors
+  [colors.primary]
+    # hard contrast: background = '#1d2021'
+    background = '#282828'
+    # soft contrast: background = '#32302f'
+    foreground = '#ebdbb2'
+
+  # Normal colors
+  [colors.normal]
+    black   = '#282828'
+    red     = '#cc241d'
+    green   = '#98971a'
+    yellow  = '#d79921'
+    blue    = '#458588'
+    magenta = '#b16286'
+    cyan    = '#689d6a'
+    white   = '#a89984'
+
+  # Bright colors
+  [colors.bright]
+    black   = '#928374'
+    red     = '#fb4934'
+    green   = '#b8bb26'
+    yellow  = '#fabd2f'
+    blue    = '#83a598'
+    magenta = '#d3869b'
+    cyan    = '#8ec07c'
+    white   = '#ebdbb2'
+
+# Cursor configuration
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+# Scrolling
+[scrolling]
+history = 10000
+multiplier = 3
+
+# Key bindings
+# [[key_bindings]]
+# key = "V"
+# mods = "Control|Shift"
+# action = "Paste"
+
+# [[key_bindings]]
+# key = "C"
+# mods = "Control|Shift"
+# action = "Copy"
+
+# [[key_bindings]]
+# key = "Q"
+# mods = "Control|Shift"
+# action = "Quit"
+
+# # Mouse bindings
+# [[mouse_bindings]]
+# mouse = "Middle"
+# action = "PasteSelection"
+
+# Shell
+# [shell]
+# program = "/bin/bash"
+# args = ["--login"]
+# Use powershell when running on Windows
+#[shell]
+#program = "pwsh.exe"
+[terminal]
+shell = "pwsh.exe"
+
+# Live config reload
+# live_config_reload = true
+
+# Logging
+# log_level = "Warn"

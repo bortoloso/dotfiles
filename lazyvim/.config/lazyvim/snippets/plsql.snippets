@@ -1,0 +1,310 @@
+snippet proc Single procedure template
+    create or replace procedure ${1:procedure_name}(${2:parameters}) is
+    begin
+        ${0:-- procedure body}
+    end ${1:procedure_name};
+    /
+
+snippet func
+    create or replace function ${1:function_name}(${2:parameters}) return ${3:return_type} is
+    begin
+        ${0:-- function body}
+        return ${4:output};
+    end ${1:function_name};
+    /
+
+snippet pkg
+    create or replace package ${1:package_name} is
+        ${2:-- declarations}
+    end ${1:package_name};
+    /
+    create or replace package body ${1:package_name} is
+        ${0:-- package body implementation}
+    end ${1:package_name};
+    /
+
+snippet trg
+    create or replace trigger ${1:trigger_name}
+    before ${2:insert or update or delete} on ${3:table_name}
+    for each row
+    begin
+        ${0:-- trigger body}
+    end ${1:trigger_name};
+    /
+
+snippet view
+    create or replace view ${1:view_name} as
+    select ${2:columns}
+    from ${3:table_name}
+    where ${4:condition};
+
+snippet while
+    while ${1:condition} loop
+        ${0:-- loop body}
+    end loop;
+
+snippet for
+    for ${1:i} in ${2:start}..${3:end} loop
+        ${0:-- loop body}
+    end loop;
+
+snippet open
+    open ${1:cursor_name};
+    loop fetch ${1:cursor_name} into ${2:variable};
+	exit when ${1:cursor_name}%notfound;
+        ${0:-- body}
+    close ${1:cursor_name};
+
+snippet fetch
+    fetch ${1:cursor_name} into ${2:variable};
+
+snippet if
+    if ${1:condition} then
+        ${0:-- statements}
+    elsif ${2:condition} then
+        -- statements for elsif
+    else
+        -- statements for else
+    end if;
+
+snippet if
+    if ${1:condition} then
+        ${0:-- statements}
+    elsif ${2:condition} then
+        -- statements for elsif
+    else
+        -- statements for else
+    end if;
+
+snippet exit
+    exit when ${1:condition};
+
+snippet loop
+    loop
+        ${0:-- loop body}
+        exit when ${1:condition};
+    end loop;
+
+snippet case
+    case ${1:expression}
+        when ${2:value} then
+            ${0:-- statements}
+        when ${3:value} then
+            -- other statements
+        else
+            -- else statements
+    end case;
+
+snippet lock_table
+    lock table ${1:table_name} in ${2:lock_mode} mode;
+
+snippet merge
+    merge into ${1:target_table} t
+    using ${2:source_table} s
+    on (${3:join_condition})
+    when matched then
+        update set ${4:column_update}
+    when not matched then
+        insert (${5:columns}) values (${6:values});
+
+snippet type
+    ${1:variable_name} ${2:table_name}.${3:column_name}%type;
+
+snippet rowtype
+    ${1:record_name} ${2:table_name}%rowtype;
+
+snippet pragma
+    pragma exception_init(${1:exception_name}, -${2:error_code});
+
+snippet savepoint
+    savepoint ${1:savepoint_name};
+
+snippet execute_immediate
+    execute immediate '${1:sql_statement}' into ${2:variable};
+
+
+snippet cursor_for
+    for ${1:record} in (select ${2:columns} from ${3:table_name} where ${4:condition}) loop
+        ${0:-- loop body}
+    end loop;
+
+snippet exception
+    begin
+        ${0:-- block body}
+    exception
+        when ${1:exception_name} then
+            ${2:-- handle exception}
+        when others then
+            ${3:-- handle all other exceptions}
+    end;
+    /
+	
+snippet bulk_collect
+    select ${1:columns}
+    bulk collect into ${2:collection}
+    from ${3:table_name}
+    where ${4:condition};
+
+snippet declare_var
+    declare
+        ${1:variable_name} ${2:data_type} := ${3:default_value};
+	begin
+		${0:-- use variable}
+	end;
+	/
+
+snippet declare_cursor
+    declare
+        cursor ${1:cursor_name} is
+        select ${2:columns} from ${3:table_name}
+        where ${4:condition};
+	begin
+		open ${1:cursor_name};
+		${0:-- cursor operations}
+		close ${1:cursor_name};
+	end;
+	/
+
+snippet anon
+    declare
+        ${0:-- variable declarations}
+    begin
+        ${1:-- block body}
+    exception
+        when ${2:exception_name} then
+            ${3:-- handle exception}
+    end;
+	/
+
+snippet dbms_output
+    dbms_output.put_line(${1:message});
+
+snippet create_sequence
+    create sequence ${1:sequence_name}
+    start with ${2:start_value}
+    increment by ${3:increment_value}
+    ${4:-- other options};
+	/
+
+snippet nextval
+    ${1:sequence_name}.nextval;
+
+snippet currval
+    ${1:sequence_name}.currval;
+
+snippet create_synonym
+    create or replace synonym ${1:synonym_name} for ${2:object_name};
+	/
+
+snippet create_mv
+    create materialized view ${1:view_name}
+    as select ${2:columns}
+    from ${3:table_name}
+    ${4:-- options};
+	/
+
+snippet create_index
+    create index ${1:index_name} on ${2:table_name}(${3:columns});
+	/
+
+snippet create_unique_index
+    create unique index ${1:index_name} on ${2:table_name}(${3:columns});
+	/
+
+snippet add_column
+    alter table ${1:table_name}
+    add ${2:column_name} ${3:data_type};
+	/
+
+snippet modify_column
+    alter table ${1:table_name}
+    modify ${2:column_name} ${3:new_data_type};
+	/
+
+snippet drop_column
+    alter table ${1:table_name}
+    drop column ${2:column_name};
+	/
+
+snippet add_constraint
+    alter table ${1:table_name}
+    add constraint ${2:constraint_name} ${3:constraint_type} (${4:columns});
+	/
+
+snippet drop_constraint
+    alter table ${1:table_name}
+    drop constraint ${2:constraint_name};
+	/
+
+snippet after_insert_trigger
+    create or replace trigger ${1:trigger_name}
+    after insert on ${2:table_name}
+    for each row
+    begin
+        ${0:-- trigger body}
+    end ${1:trigger_name};
+	/
+
+snippet before_update_trigger
+    create or replace trigger ${1:trigger_name}
+    before update on ${2:table_name}
+    for each row
+    begin
+        ${0:-- trigger body}
+    end ${1:trigger_name};
+	/
+
+snippet after_delete_trigger
+    create or replace trigger ${1:trigger_name}
+    after delete on ${2:table_name}
+    for each row
+    begin
+        ${0:-- trigger body}
+    end ${1:trigger_name};
+	/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# snippet tbl
+# 	create table ${1:table} (
+# 		${0:columns}
+# 	);
+# snippet col
+# 	${1:name}	${2:type}	${3:default ''}	${0:not null}
+# snippet ccol
+# 	${1:name}	varchar2(${2:size})	${3:default ''}	${0:not null}
+# snippet ncol
+# 	${1:name}	number	${3:default 0}	${0:not null}
+# snippet dcol
+# 	${1:name}	date	${3:default sysdate}	${0:not null}
+# snippet ind
+# 	create index ${0:$1_$2} on ${1:table}(${2:column});
+# snippet uind
+# 	create unique index ${1:name} on ${2:table}(${0:column});
+# snippet tblcom
+# 	comment on table ${1:table} is '${0:comment}';
+# snippet colcom
+# 	comment on column ${1:table}.${2:column} is '${0:comment}';
+# snippet addcol
+# 	alter table ${1:table} add (${2:column} ${0:type});
+# snippet seq
+# 	create sequence ${1:name} start with ${2:1} increment by ${3:1} minvalue ${0:1};
+# snippet s*
+# 	select * from ${0:table}
