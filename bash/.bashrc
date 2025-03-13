@@ -170,7 +170,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_411
-export PATH=$JAVA_HOME/bin:$PATH
+#export PATH=$JAVA_HOME/bin:$PATH
 export PATH=/home/bortoloso/.local/bin:$PATH
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH=$PATH:/usr/local/go/bin
@@ -182,3 +182,6 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_10:/opt/oracle/instantclient
 . "$HOME/.asdf/asdf.sh"
 # Ativacao do asdf completions
 . "$HOME/.asdf/completions/asdf.bash"
+
+# set java home
+. ~/.asdf/plugins/java/set-java-home.bash
