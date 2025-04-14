@@ -1,3 +1,9 @@
+-- Delete all blank lines(ENTER-newline)
+-- :g/^$/d
+-- :g will execute a command on lines which match a regex. The regex is 'blank line' and the command is :d (delete)
+--
+--
+--
 if true then
     return {
         -- Lua
