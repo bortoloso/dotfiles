@@ -26,3 +26,8 @@
 --
 vim.keymap.set("n", "<leader>cx", ":%s/\\s\\+$//e<CR>", { noremap = true, desc = "Remove trailing whitespace" })
 vim.keymap.set("n", "<leader>y", "ggVGy<C-O>", { noremap = true, desc = "Select and copy all" })
+
+-- Remover o problema de ESC + /, que abre o terminal
+vim.keymap.del("n", "<C-/>")
+-- Ou, se for o caso:
+vim.keymap.del("n", "<C-_>")

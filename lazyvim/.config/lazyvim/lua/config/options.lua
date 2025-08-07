@@ -2,6 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- Set filetype for Oracle object scripts
+vim.o.tags = "/home/bortoloso/.tags/plsql.tags"
+vim.opt.smartcase = false -- Don't ignore case with capitals
 vim.filetype.add({
     pattern = {
         [".*%.FNC"] = "plsql",

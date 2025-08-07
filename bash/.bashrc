@@ -185,3 +185,5 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_10:/opt/oracle/instantclient
 
 # set java home
 . ~/.asdf/plugins/java/set-java-home.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

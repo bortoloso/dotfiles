@@ -2,27 +2,66 @@
 -- :g/^$/d
 -- :g will execute a command on lines which match a regex. The regex is 'blank line' and the command is :d (delete)
 --
---
---
 if true then
     return {
         -- Lua
-        {
-            "ludovicchabant/vim-gutentags",
-            opts = function()
-                vim.g.gutentags_cache_dir = "/home/bortoloso/.tags"
-            end,
-            config = function()
-                -- vim.g.gutentags_cache_dir = expand("~/.tags/")
-            end,
-            -- opts = function()
-            --     vim.g.gutentags_cache_dir = "~/.tags/"
-            -- end,
-            -- opts = {
-            --     -- g:gutentags_cache_dir
-            --     gutentags_cache_dir = { "~/.tags/" },
-            -- },
-        },
+        --
+        -- {
+        --     "ludovicchabant/vim-gutentags",
+        --     -- event = "VeryLazy",
+        --     config = function()
+        --         vim.g.gutentags_cache_dir = "/home/bortoloso/.tags"
+        --         vim.g.gutentags_ctags_executable = "ctags"
+        --         vim.g.gutentags_project_root = { ".git", ".root" }
+        --         vim.g.gutentags_generate_on_write = 1
+        --         vim.g.gutentags_generate_on_missing = 1
+        --         vim.g.gutentags_define_advanced_commands = 1
+        --         vim.g.gutentags_file_list_command = {
+        --             markers = {
+        --                 [".git"] = "git ls-files",
+        --             },
+        --             default = 'find . -type f \\( -name "*.sql" -o -name "*.pls" -o -name "*.pks" -o -name "*.pkb" \\)',
+        --         }
+        --
+        --         -- vim.g.gutentags_ctags_extra_args = {
+        --         --     "--languages=SQL",
+        --         --     "--langdef=SQL",
+        --         --     "--langmap=SQL:.fnc.prc.pck.vw.src.bac.bas.act.sql.trg.pck.seq.job",
+        --         -- ,
+        --         -- [[--regex-sql=/CREATE[ \t]+(OR[ \t]+REPLACE[ \t]+)?(FUNCTION|PROCEDURE|PACKAGE|TRIGGER|VIEW|TYPE|SEQUENCE|SYNONYM|PACKAGE BODY|PACKAGE_SPEC|PACKAGE_BODY)[ \t]+([a-zA-Z0-9_]+)/\3/d,OBJECT/]],
+        --         -- }
+        --     end,
+        -- },
+
+        --
+        --
+        --
+        -- {
+        --     "ludovicchabant/vim-gutentags",
+        --     opts = function()
+        --         vim.g.gutentags_cache_dir = "/home/bortoloso/.tags"
+        --         vim.g.gutentags_ctags_executable = "ctags"
+        --         vim.g.gutentags_project_root = { ".git", ".root" }
+        --         vim.g.gutentags_generate_on_write = 1
+        --         vim.g.gutentags_generate_on_missing = 1
+        --         vim.g.gutentags_ctags_extra_args = {
+        --             "--languages=sql",
+        --             "--langdef=plsql",
+        --             "--langmap=plsql:.sql",
+        --             "--regex-plsql=/CREATE[ \t]+(OR[ \t]+REPLACE[ \t]+)?(FUNCTION|PROCEDURE|PACKAGE|TRIGGER)[ \t]+([a-zA-Z0-9_]+)/\3/d,FUNCTION/",
+        --         }
+        --     end,
+        --     config = function()
+        --         -- vim.g.gutentags_cache_dir = expand("~/.tags/")
+        --     end,
+        --     -- opts = function()
+        --     --     vim.g.gutentags_cache_dir = "~/.tags/"
+        --     -- end,
+        --     -- opts = {
+        --     --     -- g:gutentags_cache_dir
+        --     --     gutentags_cache_dir = { "~/.tags/" },
+        --     -- },
+        -- },
         {
             "folke/zen-mode.nvim",
             opts = {
@@ -45,6 +84,7 @@ if true then
             "garymjr/nvim-snippets",
             opts = {
                 search_paths = { "/home/bortoloso/snippets" },
+                search_paths = { "/home/bortoloso/.config/lazyvim/snippets" },
                 friendly_snippets = true,
             },
         },
