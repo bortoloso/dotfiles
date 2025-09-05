@@ -24,6 +24,7 @@
 -- %s/\s\+$//e
 --
 --
+vim.keymap.set("n", "<leader>cX", ":%s/\\r//g<CR>", { noremap = true, desc = "Remove ^M char" }) -- ^M = Ctrl+V Ctrl+M ou \r
 vim.keymap.set("n", "<leader>cx", ":%s/\\s\\+$//e<CR>", { noremap = true, desc = "Remove trailing whitespace" })
 vim.keymap.set("n", "<leader>y", "ggVGy<C-O>", { noremap = true, desc = "Select and copy all" })
 
