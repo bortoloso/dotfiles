@@ -148,7 +148,7 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-export PATH="$PATH:/opt/nvim-linux64/bin"
+# export PATH="$PATH:/opt/nvim-linux64/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -172,11 +172,14 @@ export NVM_DIR="$HOME/.nvm"
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_411
 #export PATH=$JAVA_HOME/bin:$PATH
 export PATH=/home/bortoloso/.local/bin:$PATH
-export PATH="$PATH:/opt/nvim-linux64/bin"
+# export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=$PATH:/usr/local/go/bin
 
 #neofetch
-export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_10:/opt/oracle/instantclient_19_10:
+# export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_10:/opt/oracle/instantclient_19_10:
+export LD_LIBRARY_PATH=~/oracle/instantclient_23_9:$LD_LIBRARY_PATH
+export PATH=~/oracle/instantclient_23_9:$PATH
 
 # Ativacao do asdf
 . "$HOME/.asdf/asdf.sh"
@@ -185,5 +188,13 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_10:/opt/oracle/instantclient
 
 # set java home
 . ~/.asdf/plugins/java/set-java-home.bash
+
+
+# testes com antlr para refatorar PLSQL
+alias antlr4='java -jar ~/antlr/antlr-4.13.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+export PYTHONPATH=/home/bortoloso/dev/projects/output:$PYTHONPATH
+
+
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
