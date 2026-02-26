@@ -1,3 +1,29 @@
+--
+--
+return {
+    {
+        "nvim-telescope/telescope.nvim",
+        opts = {
+            defaults = {
+                layout_config = {
+                    prompt_position = "top", -- Sets the prompt position to the top
+                },
+            },
+        },
+    },
+}
+
+-- require("telescope").setup({
+--     pickers = {
+--         find_files = {
+--             layout_config = {
+--
+--                 prompt_position = "top", -- or 'bottom'
+--             },
+--         },
+--     },
+-- })
+--
 -- local M = {}
 -- vim.g.snacks_animate = false
 -- lazy.nvim

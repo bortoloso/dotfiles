@@ -114,7 +114,8 @@ multiplier = 3
 #[shell]
 #program = "pwsh.exe"
 [terminal]
-shell = "pwsh.exe"
+shell = "ubuntu.exe"
+#shell = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
 
 # Live config reload
 # live_config_reload = true
