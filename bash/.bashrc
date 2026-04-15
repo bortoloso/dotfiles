@@ -189,12 +189,15 @@ export PATH=~/oracle/instantclient_23_9:$PATH
 # set java home
 . ~/.asdf/plugins/java/set-java-home.bash
 
-
 # testes com antlr para refatorar PLSQL
 alias antlr4='java -jar ~/antlr/antlr-4.13.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 export PYTHONPATH=/home/bortoloso/dev/projects/output:$PYTHONPATH
 
-
+# iniciar o agente ssh para usar as chaves privadas sem precisar digitar a senha toda hora
+# eval "$(ssh-agent -s)"
+eval $(keychain --eval --agents ssh id_ed25519_work)
+# eval $(keychain --eval --agents ssh id_ed25519_personal)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH="$HOME/.local/bin:$PATH"

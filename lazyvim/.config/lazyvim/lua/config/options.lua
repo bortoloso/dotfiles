@@ -42,3 +42,23 @@ vim.filetype.add({
         [".*%.ut"] = "plsql",
     },
 })
+-- vim.keymap.set("n", "p", function()
+--     vim.cmd("normal! p")
+--     vim.cmd([[%s/\r//ge]])
+-- end, { noremap = true })
+--
+-- vim.keymap.set("n", "P", function()
+--     vim.cmd("normal! P")
+--     vim.cmd([[%s/\r//ge]])
+-- end, { noremap = true })
+-- vim.g.clipboard = {
+--     name = "win32yank",
+--     copy = {
+--         ["+"] = "win32yank.exe -i --crlf",
+--         ["*"] = "win32yank.exe -i --crlf",
+--     },
+--     paste = {
+--         ["+"] = "win32yank.exe -o --lf",
+--         ["*"] = "win32yank.exe -o --lf",
+--     },
+-- }
