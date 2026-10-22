@@ -166,8 +166,6 @@ export NVM_DIR="$HOME/.nvm"
 #alias ls=exa
 # alias cat=batcat
 
-. "$HOME/.cargo/env"
-
 #export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_411
 #export PATH=$JAVA_HOME/bin:$PATH
@@ -190,14 +188,28 @@ export PATH=~/oracle/instantclient_23_9:$PATH
 . ~/.asdf/plugins/java/set-java-home.bash
 
 # testes com antlr para refatorar PLSQL
-alias antlr4='java -jar ~/antlr/antlr-4.13.1-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
-export PYTHONPATH=/home/bortoloso/dev/projects/output:$PYTHONPATH
+# alias antlr4='java -jar ~/antlr/antlr-4.13.1-complete.jar'
+# alias grun='java org.antlr.v4.gui.TestRig'
+# export PYTHONPATH=/home/bortoloso/dev/projects/output:$PYTHONPATH
 
 # iniciar o agente ssh para usar as chaves privadas sem precisar digitar a senha toda hora
 # eval "$(ssh-agent -s)"
-eval $(keychain --eval --agents ssh id_ed25519_work)
+# eval $(keychain --eval --agents ssh id_ed25519_work)
+#
 # eval $(keychain --eval --agents ssh id_ed25519_personal)
+alias senha='eval "$(ssh-agent -s)" && eval $(keychain --eval --agents ssh id_ed25519_work)'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH="$HOME/.local/bin:$PATH"
+. "$HOME/.cargo/env"
+
+# opencode
+export PATH=/home/bortoloso/.opencode/bin:$PATH
+
+# SQLcl
+export PATH=/home/bortoloso/dev/tools/sqlcl/bin:$PATH
+
+# export HTTP_PROXY=http://146.112.255.50:443
+# export HTTPS_PROXY=http://146.112.255.50:443
+# export http_proxy=http://146.112.255.50:443
+# export https_proxy=http://146.112.255.50:443

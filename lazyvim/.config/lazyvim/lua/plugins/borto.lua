@@ -66,12 +66,12 @@ if true then
         { "ellisonleao/gruvbox.nvim" },
 
         -- Configure LazyVim to load gruvbox
-        -- {
-        --     "lazyvim/lazyvim",
-        --     opts = {
-        --         colorscheme = "gruvbox",
-        --     },
-        -- },
+        {
+            "lazyvim/lazyvim",
+            opts = {
+                colorscheme = "gruvbox",
+            },
+        },
         {
             "garymjr/nvim-snippets",
             opts = {
